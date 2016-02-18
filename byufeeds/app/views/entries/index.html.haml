@@ -1,0 +1,8 @@
+.container
+  - @entries.each do |entry|
+    .card
+      .card-content
+        = link_to entry.title, entry
+        \-
+        %i
+          published #{time_ago_in_words(entry.published)} ago.

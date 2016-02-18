@@ -1,0 +1,13 @@
+%p#notice= notice
+
+
+.row
+  .col.s4
+    .center
+      .collection
+        - @topten.entries.each do |entry|
+          - link = entry.url
+          %a.collection-item.blue-text{:href => "#{link}", :target => "viewer" } #{entry.title}
+  .card.col.s8
+    %iframe{:name => "viewer", :src => "http://www.cougarboard.com", :height => '600', :width => '100%', :style => 'border:none', :position => 'sticky', :top => '0'}
+

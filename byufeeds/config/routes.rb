@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  resources :feeds
+  get 'entries/index'
+
+  get 'entries/show'
+
+  resources :feeds do
+    member do
+      resources :entries, only: [:index, :show]
+    end
+  end
   
   root 'feeds#index'
 

@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'feedjira'
 
+gem 'haml-rails'
+
 gem 'materialize-sass'
 
 # Use ActiveModel has_secure_password

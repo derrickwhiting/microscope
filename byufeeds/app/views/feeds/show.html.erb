@@ -1,19 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @feed.name %>
-</p>
+.row
+  .col.s4
+    .center
+      .collection
+        - @topten.entries.each do |entry|
+          - link = entry.url
+          %a.collection-item.blue-text{:href => "#{link}", :target => "viewer" } #{entry.title}
+  .card.col.s8
+    %iframe{:name => "viewer", :src => "http://www.cougarboard.com", :height => '600', :width => '660', :style => 'border:none'}
 
-<p>
-  <strong>Url:</strong>
-  <%= @feed.url %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @feed.description %>
-</p>
 
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>
